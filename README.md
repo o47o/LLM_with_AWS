@@ -30,10 +30,10 @@
 2. Launch Studio
 
 # Requirments
-pip install boto3
-pip install python-dotenv
-pip install streamlit
-pip install langchain
-pip install openai
-create .env file and add OPENAI_API_KEY
+1. pip install boto3
+2. pip install python-dotenv
+3. pip install streamlit
+4. pip install langchain
+5. pip install openai
+6. create .env file and add OPENAI_API_KEY
 
