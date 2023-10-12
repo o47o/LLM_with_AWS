@@ -37,3 +37,7 @@
 5. pip install openai
 6. create .env file and add OPENAI_API_KEY
 
+
+# main.py
+Reading kendra index and feeding information to bedrock (claud-instance) llm.
+
