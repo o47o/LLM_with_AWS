@@ -11,28 +11,27 @@ from langchain.prompts import PromptTemplate
 import boto3
 from langchain.llms.bedrock import Bedrock
 
+# Index to be processed
+# bank-doc-poc-indx
+kendra_index_id = "9ca6bcc2-47e7-47c4-a89b-2f443bb74ed7"
+
+# csv sub set index
+# kendra_index_id ="5e68ed90-2f97-476e-945e-632361b63026"
+
 model_id = "anthropic.claude-instant-v1"
-kendra_index_id = "68c523ae-114d-4b60-95c5-6c28767028c0"
 language = "en"
 
 
-
 prompt_template_string = dict()
-prompt_template_string["en"] = "{history}\n\nHuman: {input}\n\nAssistant:"
-prompt_template_string["nl"] = "{history}\n\nHuman: Beantwoord gedetailleerd de volgende vraag. Gebruik zoveel mogelijk de context, maar refereer er niet aan in het antwoord. Als je niet zeker bent, zeg dan dat je het antwoord niet weet.\nVraag: {input}\n\nAssistant:"
+prompt_template_string["en"] = "{history}\n\nHuman: {input}\n\nAI-Assistant:"
 
 if language not in prompt_template_string:
     raise KeyError(f"No prompt template string for {language}")
     
 input_template = "{}\nContext:\n{}"
 
-if language == "nl":
-    st.set_page_config(page_title="Kennisbank chat", page_icon=":robot:", layout="wide")
-    st.header("Belastingdienst - Ondernemers")
-    st.text("Welkom bij de kennisbank voor belastingvragen voor ondernemers. Waar kan ik u mee helpen?")
-else:
-    st.set_page_config(page_title="Document Analysis (Model: Bedrock-Anthropic Claude-Instant)", page_icon=":robot:", layout="wide")
-    st.header("Chat with your Financial Documents- Annual Reports 📄")
+st.set_page_config(page_title="Document Analysis (Model: Bedrock-Anthropic Claude-Instant)", page_icon=":ninja:", layout="centered")
+st.header("Chat with your Financial Documents:ledger:")
 
 boto3_bedrock = boto3.client("bedrock-runtime", "ap-northeast-1")
 kendra = boto3.client("kendra", "ap-south-1")
@@ -69,8 +68,10 @@ if "widget_key" not in st.session_state:
     st.session_state["widget_key"] = str(randint(1000, 100000000))
 
 # Sidebar - the clear button is will flush the memory of the conversation
-st.sidebar.title("Sidebar")
-clear_button = st.sidebar.button("Clear Conversation", key="clear")
+# st.sidebar.title("Options:")
+# clear_button = st.sidebar.button("Clear Conversation", key="clear")
+
+clear_button = st.button("Clear Chat", key="clear")
 
 if clear_button:
     st.session_state["generated"] = []
