@@ -65,6 +65,8 @@ We are building an application using **AWS** services (Kendra, S3 and Bedrock) t
 We are using **Kendra Services** to index the documents from **S3** buckets and pass these indexs to **LLM Model** , in this case **Bedrock-Anthropic Claude-Instant**.
 The user can ask questions based on the docs and application will answer the question on the information from docs. 
 **Execute by:** streamlit run ./main.py
+![MicrosoftTeams-image](https://github.com/o47o/LLM_with_AWS/assets/142214789/c3bedd61-b4a0-4d0e-9854-17c617cac130)
+
 
 ### retriveCSVContent.py
 We are using **Kendra Services** to index structured data in this case a **CSV** file from **S3** buckets and pass these indexs to **LLM Model** , in this case **Bedrock-Anthropic Claude-Instant**.
