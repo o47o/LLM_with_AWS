@@ -73,6 +73,13 @@ We are using **Kendra Services** to index structured data in this case a **CSV**
 The user can ask questions based on the docs and application will answer the question on the information from docs. 
 **Execute by:** streamlit run ./retriveCSVContent.py
 
+# Observations
+Kendra Service is using RAG to index the data for LLM model. We can achive same with vector stores at a **less cost**. Once the kendra indexes are created, user is billed for the service even if the index is not getting refreshed.
+Accuracy of the model is not constant, we will have to provide shot prompts to educate the model.
+While processing PDFs with text, graph, images and tables, the kendra index is not able to capture the information in graphs and images.
+Instead of creating index directly from text we can try to convert doc's pages to images and then convert images to text.
+**We can try this in local evn to create a logic and once logic is tested then we can move to cloud as services are expensive in cloud.**
+
 # Requirments
 1. pip install boto3
 2. pip install python-dotenv
