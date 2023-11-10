@@ -39,7 +39,8 @@
 10. Search for IAM on top serach bar.
 11. Click on the Policies from left pane and add service to the role we created by editing the policy *** Use Visual For This***.
 12. Search for S3 and select GetObject and ListBucket from dropdown.
-13. Once all errors are fixed, sync your data source.
+13. Add Kendra policies: BatchPutDocument and BatchDeleteDocument.
+14. Once all errors are fixed, sync your data source.
 ![sync_success](https://github.com/o47o/LLM_with_AWS/assets/142214789/ae3d8836-0b45-490a-a2f2-27fa2e3eaba0)
 
 
