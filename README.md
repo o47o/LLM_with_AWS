@@ -49,7 +49,7 @@
 ![sagemaker](https://github.com/o47o/LLM_with_AWS/assets/142214789/5bfaa068-0a95-4fbf-af73-8f0f49416721)
 
 ![sagemaker_domain](https://github.com/o47o/LLM_with_AWS/assets/142214789/3c15a4cb-7edd-4a22-bc15-729100d17df2)
-Once Sage maker roles are aut created add permission to role: AmazonKendraFullAccess.
+Once Sage maker role is created add permission to role: AmazonKendraFullAccess, BedrockFullAccess.
 2. Launch Studio
 <img width="922" alt="image" src="https://github.com/o47o/LLM_with_AWS/assets/142214789/dd7914ae-b717-4cc6-a412-3becc7f5b000">
 
